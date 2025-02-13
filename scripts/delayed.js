@@ -1,0 +1,2 @@
+export const id=683;export const ids=[683];export const modules={85:()=>{console.log("Delayed script loaded")}};import o from"./bundle.js";import*as e from"./delayed.js";o.C(e),o(o.s=85);
+//# sourceMappingURL=delayed.js.map
