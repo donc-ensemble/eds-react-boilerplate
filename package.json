@@ -1,0 +1,23 @@
+{
+  "name": "@ensemble-software/eds-react-boilerplate-source",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Starter project for Adobe Helix with Typescript, Babel, Webpack, and Preact + AntDesign",
+  "scripts": {
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ensemble-software/eds-react-boilerplate.git"
+  },
+  "author": "Adobe",
+  "license": "Apache License 2.0",
+  "bugs": {
+    "url": "https://github.com/ensemble-software/eds-react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/ensemble-software/eds-react-boilerplate#readme",
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.10"
+  }
+}

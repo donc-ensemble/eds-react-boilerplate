@@ -1,0 +1,27 @@
+﻿{
+  "compilerOptions": {
+    "paths": {
+      "react/jsx-runtime": ["./node_modules/preact/jsx-runtime"],
+      "react/jsx-dev-runtime": ["./node_modules/preact/jsx-runtime"],
+      "react": ["./node_modules/preact/compat"],
+      "react-dom/test-utils": ["./node_modules/preact/test-utils"],
+      "react-dom/client": ["./node_modules/preact/compat/client"],
+      "react-dom": ["./node_modules/preact/compat"],
+
+      "@/*": ["src/*"]
+    },
+    "allowJs": true,
+    "checkJs": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react-jsx",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "ES2022",
+    "moduleResolution": "Node",
+    "outDir": "dist",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "ES6"
+  }
+}

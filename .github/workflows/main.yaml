@@ -1,0 +1,47 @@
+name: Build
+on: [push]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: "${{ github.token }}"
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci --include=dev
+
+      - name: Install dependencies for react project
+        run: npm ci --include=dev
+        working-directory: ./react
+      - name: Run code quality checks on react project
+        working-directory: ./react
+        run: |
+          npm run lint:fix
+          npm run format:fix
+      - name: Run tests on react project
+        working-directory: ./react
+        run: npm run test
+      - name: Build react project for production
+        working-directory: ./react
+        run: npm run build:production
+      - name: Push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --force ./blocks/
+          git add --force ./scripts/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "actions: generate production build" --no-verify
+          git push

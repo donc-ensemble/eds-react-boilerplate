@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Promo Banner Component rendered promo banner matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div>
+      <picture>
+        <img
+          alt=""
+          height="333"
+          loading="lazy"
+          src="https://example.com/image.jpg"
+          width="1600"
+        />
+      </picture>
+    </div>
+    <div>
+      <p>
+        Snapshot text 1
+      </p>
+      <p>
+        Snapshot text 2
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
